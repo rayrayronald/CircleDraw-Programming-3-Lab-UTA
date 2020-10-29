@@ -1,7 +1,5 @@
-import shapes.Circle;
-import shapes.Rectangle;
-import shapes.Shape;
-import shapes.Square;
+package Tutorial_2.shapes;
+
 
 import java.awt.*;
 import java.awt.event.WindowAdapter;
@@ -20,12 +18,20 @@ public class Drawing extends Canvas {
     public Drawing() {
         setupFrame();
         setCanvas();
+        generateShapes();
+    }
+    public Drawing(Boolean bool) {
+        setCanvas();
+        generateShapes();
+    }
 
+
+    public void generateShapes() {
+        array.clear();
         for (int i = 0 ; i < 5 ; i++ ) {
             array.add(new Circle(new Point(10*random.nextInt(40),10*random.nextInt(40)), new Color(0x992266),10*random.nextInt(10)));
             array.add(new Rectangle(new Point(10*random.nextInt(40),10*random.nextInt(40)), new Color(0x992266),10*random.nextInt(10),10*random.nextInt(10)));
             array.add(new Square(new Point(10*random.nextInt(40),10*random.nextInt(40)), new Color(0x992266),10*random.nextInt(10)));
-
         }
     }
 

@@ -1,7 +1,7 @@
-package shapes;
+package Tutorial_2.shapes;
 
 import java.awt.*; /**
- * The shapes.Circle class encapsulates the information describing a circle and can draw it in
+ * The Tutorial_2.shapes.Circle class encapsulates the information describing a circle and can draw it in
  * an AWT Graphics object using AWT library methods
  * */
 public class Rectangle extends Shape {
