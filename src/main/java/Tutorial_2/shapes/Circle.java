@@ -13,7 +13,7 @@ public class Circle extends Shape{
 
     }
     @Override
-    public void draw(Graphics g) { // A method that draws the object in g
+    protected void draw(Graphics g) { // A method that draws the object in g
         g.setColor(col);
         g.fillOval(pos.x,pos.y,rad, rad);
     }

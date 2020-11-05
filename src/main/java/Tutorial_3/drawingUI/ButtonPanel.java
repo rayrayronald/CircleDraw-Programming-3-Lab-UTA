@@ -1,4 +1,8 @@
+package Tutorial_3.drawingUI;
+
 import Tutorial_2.shapes.Drawing;
+import Tutorial_3.drawingUI.SimpleUI;
+
 
 import javax.swing.*;
 import java.awt.*;

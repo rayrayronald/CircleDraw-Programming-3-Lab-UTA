@@ -14,7 +14,7 @@ public class Rectangle extends Shape {
         this.height=height; // Initialize fields
     }
     @Override
-    public void draw(Graphics g) { // A method that draws the object in g
+    protected void draw(Graphics g) { // A method that draws the object in g
         g.setColor(col);
         g.fillRect(pos.x,pos.y,width, height);
     }

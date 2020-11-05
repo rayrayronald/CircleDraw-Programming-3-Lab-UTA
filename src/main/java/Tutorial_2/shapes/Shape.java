@@ -11,6 +11,6 @@ public abstract class Shape {
         this.col=col;
     }
 
-    public abstract void draw(Graphics g);
+    abstract void draw(Graphics g);
 
 }

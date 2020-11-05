@@ -4,14 +4,13 @@ package Tutorial_2.shapes;
 import java.awt.*;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
-import java.util.ArrayList;
 import java.util.Random;
 
 public class Drawing extends Canvas {
     // A private field called f of class Frame. This is also in the AWT.
     private Frame f;
     private Random random = new Random();
-    private ArrayList<Shape> array = new ArrayList<>();
+    private Tutorial_4_ShapeDB shapeDB = new Tutorial_4_ShapeDB();
 
 
     // The constructor
@@ -24,15 +23,24 @@ public class Drawing extends Canvas {
         setCanvas();
         generateShapes();
     }
+    public Drawing(Boolean bool, Boolean bool_2) {
+    }
 
+    public void addCircle(Point pos, Color col, int radius) {
+        shapeDB.addCircle(pos, col, radius);
+    }
+    public void addSquare(Point pos, Color col, int side) {
+        shapeDB.addSquare(pos, col, side);
 
+    }
+    public void addRectangle(Point pos, Color col, int w, int h) {
+        shapeDB.addRectangle(pos, col, w, h);
+
+    }
     public void generateShapes() {
-        array.clear();
-        for (int i = 0 ; i < 5 ; i++ ) {
-            array.add(new Circle(new Point(10*random.nextInt(40),10*random.nextInt(40)), new Color(0x992266),10*random.nextInt(10)));
-            array.add(new Rectangle(new Point(10*random.nextInt(40),10*random.nextInt(40)), new Color(0x992266),10*random.nextInt(10),10*random.nextInt(10)));
-            array.add(new Square(new Point(10*random.nextInt(40),10*random.nextInt(40)), new Color(0x992266),10*random.nextInt(10)));
-        }
+        addRectangle(new Point(10*random.nextInt(40),10*random.nextInt(40)), new Color(0x992266),10*random.nextInt(10),10*random.nextInt(10));
+        addSquare(new Point(10*random.nextInt(40),10*random.nextInt(40)), new Color(0x992266),10*random.nextInt(10));
+        addCircle(new Point(10*random.nextInt(40),10*random.nextInt(40)), new Color(0x992266),10*random.nextInt(10));
     }
 
     private void setCanvas() {
@@ -52,10 +60,10 @@ public class Drawing extends Canvas {
             }
         });
     }
-
+//    public void repaint(Graphics g){
+//        shapeDB.drawShapes(g);
+//    }
     public void paint(Graphics g){
-        for (int i = 0 ; i < array.size() ; i++ ) {
-            array.get(i).draw(g);
-        }
+        shapeDB.drawShapes(g);
     }
 }

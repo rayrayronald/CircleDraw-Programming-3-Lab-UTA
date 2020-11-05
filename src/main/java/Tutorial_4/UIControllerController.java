@@ -1,18 +1,16 @@
-import Tutorial_2.shapes.Drawing;
+package Tutorial_4;
 
 import javax.swing.*;
 import java.awt.*;
 
-public class SimpleUI {
-
+public class UIControllerController {
     static GraphicsConfiguration gc; // Class field containing config info
-    public static Drawing d=new Drawing(false);
-    public static void SimpleUI() {
+
+    public UIControllerController(){
+        DrawingUIController UI = new DrawingUIController();
         JFrame frame = new JFrame(gc); // Create a new JFrame
-        frame.setSize(400, 500);
-        frame.getContentPane().add(d);
-        frame.getContentPane().add(new ButtonPanel());
-        frame.setJMenuBar(new MainMenu());
+        frame.setSize(500, 600);
+        frame.add(UI.getMainPanel());
         frame.setVisible(true);
         // This next line closes the program when the frame is closed
         frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
